@@ -1,6 +1,60 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  width: 100%;
 }
+
+body{
+  background-color: #0d0f14;
+}
+
+.header{
+  border-bottom: 1px solid rgb(52,56,65);
+}
+
+.cont-header{
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: 5rem;
+  max-width: 1536px;
+  padding-left: 2rem;
+  padding-right: 2rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cont-header h2{
+  color: white;
+}
+
+.header .principal{
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+}
+
+.header .menu ul{
+  display: flex;
+  gap: 4rem;
+}
+
+.header .menu ul a{
+  color: #f2f6fA;
+}
+
+.header .redes{
+  display: flex;
+  gap: 1rem;
+}
+
+.header .redes div{
+  display: flex;
+  align-items: center;
+}
+
+.header .redes img{
+  width: 32px;
+  height: 32px;
+}
+
