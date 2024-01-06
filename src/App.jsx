@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import './App.css'
+import './css/App.css'
 import './css/styles'
 
 import logo from './assets/Logo-ludo.png'
