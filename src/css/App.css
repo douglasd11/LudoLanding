@@ -53,6 +53,7 @@ body{
 }
 
 .header .menu ul a{
+  font-size: 1.1rem;
   font-weight: 500;
   color: #f2f6fA;
   transition: all .2s;
@@ -167,8 +168,7 @@ body{
   padding-left: 2.5rem;
   padding-right: 2.5rem;
   border-radius: 2.5rem;
-  border-width: 1px;
-  border-color: rgb(242 246 250);
+  border: 1px solid #2339ff;
   background-color: #f2f6fA;
   color: #2339ff;
   font-family: 'Exo', sans-serif;
