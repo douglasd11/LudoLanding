@@ -95,15 +95,15 @@ function App() {
           <div className='cards'>
             <CardServices>
               <p className='card-titulo'>Sitio web</p>
-              <p className='card-info'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, dolorum.</p>
+              <p className='card-info'>Atrae a tus posibles compradores, ofréceles una experiencia única, con una apariencia profesional y con mucho estilo.</p>
             </CardServices>
             <CardServices>
               <p className='card-titulo'>E-commerce</p>
-              <p className='card-info'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, dolorum.</p>
+              <p className='card-info'>Tus clientes entrarán a una tienda en línea de primer nivel donde comprarán tus productos/servicios de manera fácil y rápida.</p>
             </CardServices>
             <CardServices>
               <p className='card-titulo'>Aplicacion movil</p>
-              <p className='card-info'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, dolorum.</p>
+              <p className='card-info'>Tu aplicación móvil con el máximo nivel de calidad posible utilizando todos los sensores y prestaciones de los dispositivos móviles al máximo.</p>
             </CardServices>
           </div>
         </section>
