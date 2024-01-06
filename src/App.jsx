@@ -1,6 +1,7 @@
 import { useState } from 'react'
 
 import './App.css'
+import './css/styles'
 
 import logo from './assets/Logo-ludo.png'
 
@@ -14,6 +15,8 @@ import githubl from './assets/github.png'
 import nodejs from './assets/node.png'
 import postgre from './assets/postgresql.png'
 import react from './assets/react.png'
+
+import CardServices from './components/CardServices'
 
 
 function App() {
@@ -84,6 +87,27 @@ function App() {
             
           </div>
         </section>
+
+        <section className='servicios'>
+          <div className='titulo'>
+            <p>Explora los servicios ofrecidos</p>
+          </div>
+          <div className='cards'>
+            <CardServices>
+              <p className='card-titulo'>Sitio web</p>
+              <p className='card-info'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, dolorum.</p>
+            </CardServices>
+            <CardServices>
+              <p className='card-titulo'>E-commerce</p>
+              <p className='card-info'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, dolorum.</p>
+            </CardServices>
+            <CardServices>
+              <p className='card-titulo'>Aplicacion movil</p>
+              <p className='card-info'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, dolorum.</p>
+            </CardServices>
+          </div>
+        </section>
+
       </main>
 
       {/* <h2>LudoNex</h2> */}
