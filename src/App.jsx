@@ -3,7 +3,7 @@ import { useState } from 'react'
 import './css/App.css'
 import './css/styles'
 
-import logo from './assets/Logo-ludo.png'
+import logo from './assets/Logo-ludo-4.png'
 
 import discord from './assets/discord.svg'
 import github from './assets/github.svg'
@@ -16,7 +16,18 @@ import nodejs from './assets/node.png'
 import postgre from './assets/postgresql.png'
 import react from './assets/react.png'
 
+import globe from './assets/globe.svg'
+import mobile from './assets/mobile.svg'
+import cuadros from './assets/cuadros.svg'
+
+import code from './assets/code.svg'
+import portfolioPort from './assets/portfolio-portada.png'
+import eatyPort from './assets/eaty-portada.png'
+import trello from './assets/trello.svg'
+
+
 import CardServices from './components/CardServices'
+import CardProjects from './components/CardProjects'
 
 
 function App() {
@@ -90,21 +101,93 @@ function App() {
 
         <section className='servicios'>
           <div className='titulo'>
-            <p>Explora los servicios ofrecidos</p>
+            <p>Servicios de software</p>
+          </div>
+          <div className='texto'>
+            <p>Contamos con un portafolio de servicios que nos permite abarcar un mundo de retos prometedores.</p>
           </div>
           <div className='cards'>
             <CardServices>
+              <img src={globe} alt="" />
               <p className='card-titulo'>Sitio web</p>
               <p className='card-info'>Atrae a tus posibles compradores, ofréceles una experiencia única, con una apariencia profesional y con mucho estilo.</p>
             </CardServices>
             <CardServices>
+              <img src={cuadros} alt="" />
               <p className='card-titulo'>E-commerce</p>
               <p className='card-info'>Tus clientes entrarán a una tienda en línea de primer nivel donde comprarán tus productos/servicios de manera fácil y rápida.</p>
             </CardServices>
             <CardServices>
+              <img src={mobile} alt="" />
               <p className='card-titulo'>Aplicacion movil</p>
               <p className='card-info'>Tu aplicación móvil con el máximo nivel de calidad posible utilizando todos los sensores y prestaciones de los dispositivos móviles al máximo.</p>
             </CardServices>
+          </div>
+        </section>
+
+        <section className='proyectos'>
+          <div className='main'>
+            <div className='titulo'>
+              <p>Proyectos en desarrollo</p>
+            </div>
+            <div className="cards">
+              <CardProjects color={"blue"}>
+                <div className='cont'>
+
+                  <div className='pres'>
+                    <img className='code' src={code} />
+                    <div className='proj'>
+                      <h3 className='title'>Labporfolio.dev</h3>
+                      <p className='dates aqua'>Enero 2024 - Actualidad</p>
+
+                      <p className='info'>Aplicacion web para desarrollar tu portfolio a base de plantillas
+                        personalizables, ademas sera codigo abierto por lo que podras
+                        obtener el codigo y modificarlo a tu gusto.
+                      </p>
+                      <p className='status'><span className='aqua'>En planeacion</span> definiendo la arquitectura de software y 
+                        tecnologias a usar para asegurar la escalabilidad del proyecto. 
+                      </p>
+                      <div className='link'>
+                        <a className='github' href="#"><img src={github}/>Repositorio</a>
+                        <a className='trello' href="#"><img src={trello}/>Tablero</a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className='image-box'>
+                    <img src={portfolioPort} alt="" />
+                  </div>
+                </div>
+              </CardProjects>
+              <CardProjects color={"orange"}>
+                <div className='cont inv'>
+
+                  <div className='image-box'>
+                    <img src={eatyPort} alt="" />
+                  </div>
+                  
+                  <div className='pres'>
+                    <img className='code' src={code} />
+                    <div className='proj'>
+                      <h3 className='title'>Eatydomis.com</h3>
+                      <p className='dates orange'>Marzo 2024 - Actualidad</p>
+
+                      <p className='info'>Aplicacion web para el crecimiento de pequeños y medianos restaurantes, 
+                        ofreciendo marketing, landing page, pos de venta y servicio de domicilios.
+                      </p>
+                      <p className='status'><span className='orange'>En planeacion</span> acoplando ideas y creando 
+                        diagrama de requisitos funcionales. 
+                      </p>
+                      <div className='link'>
+                        <a className='github' href="#"><img src={github}/>Repositorio</a>
+                        <a className='trello' href="#"><img src={trello}/>Tablero</a>
+                      </div>
+                    </div>
+                  </div>
+                  
+                </div>
+              </CardProjects>
+            </div>
           </div>
         </section>
 

@@ -32,12 +32,15 @@ body{
 }
 
 .cont-header .logo img{
-  height: 45px;
+  width: 32px;
+  height: 32px;
+  margin-bottom: 3px;
 }
 
 .cont-header h2{
   font-family: 'Exo', sans-serif;
-  font-size: 1.4rem;
+  font-weight: 700;
+  font-size: 1.5rem;
   color: white;
 }
 
@@ -54,7 +57,7 @@ body{
 
 .header .menu ul a{
   font-size: 1.1rem;
-  font-weight: 500;
+  font-weight: 400;
   color: #f2f6fA;
   transition: all .2s;
 }
@@ -86,10 +89,11 @@ body{
   justify-content: center;
   align-items: center;
   position: relative;
-  padding-top: 6rem;
-  padding-bottom: 3rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
   overflow: hidden;
   text-align: center;
+  height: calc(100vh - 5rem);
 }
 
 .portada .cont{
@@ -108,21 +112,24 @@ body{
   width: 150%;
   left: -25%;
   height: 100%;
-  background: linear-gradient(83.21deg,#276afa 20%,#bc52ee 90%);
-  -webkit-mask-image: radial-gradient(rgba(0,0,0,.45),transparent 100%);
-  mask-image: radial-gradient(rgba(0,0,0,.45),transparent 70%);
+  background: linear-gradient(83.21deg,#276afa 0%,#2a9cff 100%);
+  -webkit-mask-image: radial-gradient(rgba(0,0,0,.45),transparent 10%);
+  mask-image: radial-gradient(rgba(0, 0, 0, 0.63),transparent 70%);
 }
 
 .portada .titulo{
   display: flex;
   flex-direction: column;
   align-items: center;
+  /* font-family: 'Ubuntu', sans-serif; */
+  /* font-family: 'Rowdies', sans-serif; */
   font-family: 'Exo', sans-serif;
-  font-size: 4.5rem;
+  font-size: 4.2rem;
+  font-weight: 600;
 }
 
 .portada .titulo .tbajo{
-  margin-top: -1.5rem;
+  margin-top: -1.6rem;
 }
 
 .portada .texto{
@@ -168,10 +175,12 @@ body{
   padding-left: 2.5rem;
   padding-right: 2.5rem;
   border-radius: 2.5rem;
-  border: 1px solid #2339ff;
-  background-color: #f2f6fA;
+  /* border: 1px solid #2339ff; */
+  border: none;
+  background-color: #ffffff;
   color: #2339ff;
   font-family: 'Exo', sans-serif;
+  font-weight: 600;
   transition: all .2s;
   cursor: pointer;
 }
@@ -188,7 +197,8 @@ body{
 }
 
 .stack p{
-  color: rgb(206, 222, 255);
+  font-size: 1.1rem;
+  color: rgb(218, 203, 221);
   text-align: left;
   max-width: 200px;
   font-weight: 200;
@@ -200,7 +210,7 @@ body{
 }
 
 .stack .tecnologias img{
-  width: 170px;
+  width: 150px;
   filter: invert(1);
 }
 
