@@ -15,7 +15,8 @@ body{
   margin-right: auto;
   width: 100%;
   height: 5rem;
-  max-width: 1536px;
+  /* max-width: 1536px; */
+  max-width: 1320px;
   padding-left: 2rem;
   padding-right: 2rem;
 
@@ -86,14 +87,15 @@ body{
 
 .portada{
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   position: relative;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-top: 6rem;
+  padding-bottom: 3.5rem;
   overflow: hidden;
   text-align: center;
-  height: calc(100vh - 5rem);
+  min-height: calc(100vh - 6rem);
 }
 
 .portada .cont{
@@ -103,18 +105,42 @@ body{
   z-index: 10;
 }
 
+.portada .cover-image{
+  width: 100vw;
+  z-index: -1;
+}
+
+
+.portada::after{
+  position: absolute;
+  z-index: 0;
+  content: "";
+  bottom: 0;
+  width: 200%;
+  /* left: -25%; */
+  height: 200%;
+  background: radial-gradient(transparent 55%,#0d0f14 70%);
+  /* -webkit-mask-image: radial-gradient(rgba(0,0,0,.45),transparent 10%);
+  mask-image: radial-gradient(rgba(0, 0, 0, 0.327) 50%,transparent 70%); */
+}
+
 .portada::before{
   position: absolute;
   z-index: 0;
   content: "";
   top: 0%;
   bottom: 10%;
-  width: 150%;
-  left: -25%;
+  width: 100%;
+  /* left: -25%; */
   height: 100%;
-  background: linear-gradient(83.21deg,#276afa 0%,#2a9cff 100%);
-  -webkit-mask-image: radial-gradient(rgba(0,0,0,.45),transparent 10%);
-  mask-image: radial-gradient(rgba(0, 0, 0, 0.63),transparent 70%);
+  /* background: linear-gradient(83.21deg,#276afa 0%,#2a9cff 100%);
+  -webkit-mask-image: radial-gradient(rgba(0,0,0,.45),transparent 10%); */
+  /* mask-image: radial-gradient(rgba(0, 0, 0, 0.327) 50%,transparent 70%);  */
+  background-image: url('../assets/pricing-gradient.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center -150px;
+  filter: brightness(1) blur(2px);
 }
 
 .portada .titulo{
@@ -198,7 +224,7 @@ body{
 
 .stack p{
   font-size: 1.1rem;
-  color: rgb(218, 203, 221);
+  color: rgb(255, 255, 255);
   text-align: left;
   max-width: 200px;
   font-weight: 200;
@@ -211,7 +237,7 @@ body{
 
 .stack .tecnologias img{
   width: 150px;
-  filter: invert(1);
+  filter: invert(1) brightness(2);
 }
 
 /* ---------------------------------------------- */

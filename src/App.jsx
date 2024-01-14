@@ -16,6 +16,8 @@ import nodejs from './assets/node.png'
 import postgre from './assets/postgresql.png'
 import react from './assets/react.png'
 
+import cover from './assets/pricing-cover.svg'
+
 import globe from './assets/globe.svg'
 import mobile from './assets/mobile.svg'
 import cuadros from './assets/cuadros.svg'
@@ -95,8 +97,8 @@ function App() {
                 <img src={githubl} alt="" />
               </div>
             </div>
-            
           </div>
+          <img src={cover} className='cover-image' alt="" />
         </section>
 
         <section className='servicios'>
@@ -193,7 +195,6 @@ function App() {
 
       </main>
 
-      {/* <h2>LudoNex</h2> */}
     </>
   )
 }
