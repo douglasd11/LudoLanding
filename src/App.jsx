@@ -1,20 +1,14 @@
-import { useState } from 'react'
-
 import './css/App.css'
 import './css/styles'
 
-import logo from './assets/Logo-ludo-4.png'
-
-import discord from './assets/discord.svg'
 import github from './assets/github.svg'
-import linkedin from './assets/linkedin.svg'
 
-import angular from './assets/angular.png'
-import aws from './assets/aws.png'
-import githubl from './assets/github.png'
-import nodejs from './assets/node.png'
-import postgre from './assets/postgresql.png'
-import react from './assets/react.png'
+import angular from './assets/tecnologics/angular.png'
+import aws from './assets/tecnologics/aws.png'
+import githubl from './assets/tecnologics/github.png'
+import nodejs from './assets/tecnologics/node.png'
+import postgre from './assets/tecnologics/postgresql.png'
+import react from './assets/tecnologics/react.png'
 
 import cover from './assets/pricing-cover.svg'
 
@@ -28,41 +22,19 @@ import eatyPort from './assets/eaty-portada.png'
 import trello from './assets/trello.svg'
 
 
-import CardServices from './components/CardServices'
-import CardProjects from './components/CardProjects'
+import CardServices from './components/Card/CardServices'
+import CardProjects from './components/Card/CardProjects'
+import Header from './components/Header/Header'
+import Footer from './components/Footer/Footer'
 
 
 function App() {
 
   return (
     <>
-      <header className='header'>
-        <div className='cont-header'>
-          <div className='principal'>
-            <div className='logo'>
-              <img src={logo} alt="" />
-              <h2>LudoNex</h2>
-            </div>
-            
-            <div className='menu'>
-              <ul>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Servicios</a></li>
-                <li><a href="#">Proyectos</a></li>
-                <li><a href="#">Contactos</a></li>
-              </ul>
-            </div>
-          </div>
-          
-          <div className='redes'>
-            <div><img src={discord} /></div>
-            <div><img src={github} /></div>
-            <div><img src={linkedin} /></div>
-          </div>
-        </div>
-      </header>
+      <Header/>
       <main>
-        <section className='portada'>
+        <section className='portada' id='portada'>
           <div className='cont'>
             <div className='titulo'>
               <p>Desarrollo de software para ti</p>
@@ -74,11 +46,11 @@ function App() {
             <div className='links'>
               <div className='solicita'>
                 <p>Crece con nosotros</p>
-                <button>Solicitar Aplicacion</button>
+                <a href='#contactos'>Solicitar Aplicacion</a>
               </div>
               <div className='equipo'>
                 <p>Aprende con nosotros</p>
-                <button>Equipo Ludonex</button>
+                <a href='#contactos'>Equipo Ludonex</a>
               </div>
             </div>
             <div className='stack'>
@@ -98,10 +70,10 @@ function App() {
               </div>
             </div>
           </div>
-          <img src={cover} className='cover-image' alt="" />
+          {/* <img src={cover} className='cover-image' alt="" /> */}
         </section>
 
-        <section className='servicios'>
+        <section className='servicios' id='servicios'>
           <div className='titulo'>
             <p>Servicios de software</p>
           </div>
@@ -127,7 +99,7 @@ function App() {
           </div>
         </section>
 
-        <section className='proyectos'>
+        <section className='proyectos' id='proyectos'>
           <div className='main'>
             <div className='titulo'>
               <p>Proyectos en desarrollo</p>
@@ -161,7 +133,7 @@ function App() {
                   </div>
                 </div>
               </CardProjects>
-              <CardProjects color={"orange"}>
+              <CardProjects color={"blue"}>
                 <div className='cont inv'>
 
                   <div className='image-box'>
@@ -172,12 +144,12 @@ function App() {
                     <img className='code' src={code} />
                     <div className='proj'>
                       <h3 className='title'>Eatydomis.com</h3>
-                      <p className='dates orange'>Marzo 2024 - Actualidad</p>
+                      <p className='dates aqua'>Marzo 2024 - Actualidad</p>
 
                       <p className='info'>Aplicacion web para el crecimiento de pequeños y medianos restaurantes, 
                         ofreciendo marketing, landing page, pos de venta y servicio de domicilios.
                       </p>
-                      <p className='status'><span className='orange'>En planeacion</span> acoplando ideas y creando 
+                      <p className='status'><span className='aqua'>En planeacion</span> acoplando ideas y creando 
                         diagrama de requisitos funcionales. 
                       </p>
                       <div className='link'>
@@ -193,7 +165,55 @@ function App() {
           </div>
         </section>
 
+        <section className='contactos' id='contactos'>
+          <div className='main'>
+
+            <div className='info'>
+              <h3 className='title'>Cuentanos como podemos ayudarte.</h3>
+              <p className='message'>Cada minuto es una oportunidad y cuanto más compartas tu trabajo e inspires a tu alrededor, más puertas se abrirán para ti</p>
+              <div className='person'>
+                <p>Luis miguel espitaleta</p>
+                <span>Gestor de proyectos</span>
+              </div>
+              <div className='email'>
+                <p>Escribenos</p>
+                <span>lumiesal@gmail.com</span>
+              </div>
+            </div>
+
+            <div className='request'>
+              <form className='form'>
+                <h4>Solicitudes y dudas</h4>
+                <div className='form-control'>
+                  <label htmlFor="">Nombre completo</label>
+                  <input type="text" placeholder='Nombre completo' required/>
+                </div>
+                <div className='form-control'>
+                  <label htmlFor="">Correo electronico</label>
+                  <input type="email" placeholder='Correo electronico' required/>
+                </div>
+                <div className='form-control'>
+                  <label htmlFor="">Numero de celular</label>
+                  <input type="tel" placeholder='Numero de celular' required/>
+                </div>
+                <div className='form-control'>
+                  <label htmlFor="">Asunto / mensaje</label>
+                  <input type="text" placeholder='Mensaje' required/>
+                </div>
+                <p className='text'>Recuerde llenar todos los campos</p>
+                <button>
+                  <p>Enviar</p>
+                  {/* <img src="" alt="" /> */}
+                </button>
+              </form>
+            </div>
+
+          </div>
+        </section>
+
       </main>
+
+      <Footer/>
 
     </>
   )
