@@ -2,7 +2,7 @@ import * as React from 'react'
 import { useState } from 'react'
 import { useRef } from 'react'
 
-import logo from '../../assets/Logo-ludo-4.png'
+import logo from '../../assets/Logo-ludo-5.png'
 
 import discord from '../../assets/discord.svg'
 import github from '../../assets/github.svg'
