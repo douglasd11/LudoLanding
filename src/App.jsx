@@ -54,7 +54,7 @@ function App() {
               </div>
             </div>
             <div className='stack'>
-              <div>
+              <div className='texto'>
                 <p>Mira todo nuestro stack </p>
                 <p>tecnologico para el</p>
                 <p>desarollo de las apps:</p>
@@ -107,23 +107,29 @@ function App() {
             <div className="cards">
               <CardProjects color={"blue"}>
                 <div className='cont'>
+                  
+                  <div className='box'>
+                    <div className='pres'>
+                      <img className='code' src={code} />
+                      <div className='proj'>
+                        
+                          
+                          <h3 className='title'>Labporfolio.dev</h3>
+                        
+                        
+                        <p className='dates aqua'>Enero 2024 - Actualidad</p>
 
-                  <div className='pres'>
-                    <img className='code' src={code} />
-                    <div className='proj'>
-                      <h3 className='title'>Labporfolio.dev</h3>
-                      <p className='dates aqua'>Enero 2024 - Actualidad</p>
-
-                      <p className='info'>Aplicacion web para desarrollar tu portfolio a base de plantillas
-                        personalizables, ademas sera codigo abierto por lo que podras
-                        obtener el codigo y modificarlo a tu gusto.
-                      </p>
-                      <p className='status'><span className='aqua'>En planeacion</span> definiendo la arquitectura de software y 
-                        tecnologias a usar para asegurar la escalabilidad del proyecto. 
-                      </p>
-                      <div className='link'>
-                        <a className='github' href="#"><img src={github}/>Repositorio</a>
-                        <a className='trello' href="#"><img src={trello}/>Tablero</a>
+                        <p className='info'>Aplicacion web para desarrollar tu portfolio a base de plantillas
+                          personalizables, ademas sera codigo abierto por lo que podras
+                          obtener el codigo y modificarlo a tu gusto.
+                        </p>
+                        {/* <p className='status'><span className='aqua'>En planeacion</span> definiendo la arquitectura de software y 
+                          tecnologias a usar para asegurar la escalabilidad del proyecto. 
+                        </p> */}
+                        <div className='link'>
+                          <a className='github' href="#"><img src={github}/>Repositorio</a>
+                          <a className='trello' href="#"><img src={trello}/>Tablero</a>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -140,21 +146,23 @@ function App() {
                     <img src={eatyPort} alt="" />
                   </div>
                   
-                  <div className='pres'>
-                    <img className='code' src={code} />
-                    <div className='proj'>
-                      <h3 className='title'>Eatydomis.com</h3>
-                      <p className='dates aqua'>Marzo 2024 - Actualidad</p>
+                  <div className="box">
+                    <div className='pres'>
+                      <img className='code' src={code} />
+                      <div className='proj'>
+                        <h3 className='title'>Eatydomis.com</h3>
+                        <p className='dates aqua'>Marzo 2024 - Actualidad</p>
 
-                      <p className='info'>Aplicacion web para el crecimiento de pequeños y medianos restaurantes, 
-                        ofreciendo marketing, landing page, pos de venta y servicio de domicilios.
-                      </p>
-                      <p className='status'><span className='aqua'>En planeacion</span> acoplando ideas y creando 
-                        diagrama de requisitos funcionales. 
-                      </p>
-                      <div className='link'>
-                        <a className='github' href="#"><img src={github}/>Repositorio</a>
-                        <a className='trello' href="#"><img src={trello}/>Tablero</a>
+                        <p className='info'>Aplicacion web para el crecimiento de pequeños y medianos restaurantes, 
+                          ofreciendo marketing, landing page, pos de venta y servicio de domicilios.
+                        </p>
+                        {/* <p className='status'><span className='aqua'>En planeacion</span> acoplando ideas y creando 
+                          diagrama de requisitos funcionales. 
+                        </p> */}
+                        <div className='link'>
+                          <a className='github' href="#"><img src={github}/>Repositorio</a>
+                          <a className='trello' href="#"><img src={trello}/>Tablero</a>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -170,13 +178,13 @@ function App() {
 
             <div className='info'>
               <h3 className='title'>Cuentanos como podemos ayudarte.</h3>
-              <p className='message'>Cada minuto es una oportunidad y cuanto más compartas tu trabajo e inspires a tu alrededor, más puertas se abrirán para ti</p>
+              <p className='message'>Cada minuto es una oportunidad y cuanto más compartas tu trabajo e inspires a tu alrededor, más puertas se abrirán para ti.</p>
               <div className='person'>
                 <p>Luis miguel espitaleta</p>
                 <span>Gestor de proyectos</span>
               </div>
               <div className='email'>
-                <p>Escribenos</p>
+                <p>Escríbenos</p>
                 <span>lumiesal@gmail.com</span>
               </div>
             </div>
