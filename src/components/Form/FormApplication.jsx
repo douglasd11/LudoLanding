@@ -22,12 +22,10 @@ export default function FormApplication() {
 
     const onSubmit = (formData) => {
 
-        // clienteAxios.post('/solicitud/agregar', formData)
-        // .then(res => {
-        //     console.log("solicitud enviada")
-        // })
-
-        console.log("solicitud enviada")
+        clienteAxios.post('/solicitud/agregar', formData)
+        .then(res => {
+            console.log("solicitud enviada")
+        })
 
         let msg = msgRef.current
         msg.setAttribute('style', 'opacity: 1' )
