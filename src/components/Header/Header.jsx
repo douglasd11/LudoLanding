@@ -1,6 +1,8 @@
 import * as React from 'react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useRef } from 'react'
+
+import clienteAxios from '../../config/axios'
 
 import logo from '../../assets/Logo-ludo-5.png'
 
@@ -11,16 +13,24 @@ import linkedin from '../../assets/linkedin.svg'
 import bars_solid from '../../assets/bars-solid.svg'
 
 
-
 export default function Header(props) {
 
-    const menuRef = useRef(null);
+    const menuRef = useRef(null)
     const [open, setOpen] = useState(false)
+
+    useEffect(() => {
+        clienteAxios.get('/active')
+        .then(res => {
+            console.log(res.data)
+        })
+    }, [])
+    
 
     const handleMenuBar = () => {
         let menubar = menuRef.current
 
-        menubar.setAttribute('style', ( open ? 'left: -100%; opacity: 0;' : 'left: 0; opacity: 1;') )
+        document.body.setAttribute('style',  (open ? 'overflow: hidden' : 'overflow: auto'))
+        menubar.setAttribute('style', (open ? 'left: 0; opacity: 1' : 'left: -100%; opacity: 0') )
         setOpen(!open)
     }
 
@@ -35,10 +45,10 @@ export default function Header(props) {
                     
                     <div className='menu'>
                         <ul ref={menuRef}>
-                            <li><a href="#inicio">Inicio</a></li>
-                            <li><a href="#servicios">Servicios</a></li>
-                            <li><a href="#proyectos">Proyectos</a></li>
-                            <li><a href="#contactos">Contactos</a></li>
+                            <li><a href="#inicio" onClick={handleMenuBar}>Inicio</a></li>
+                            <li><a href="#servicios" onClick={handleMenuBar}>Servicios</a></li>
+                            <li><a href="#proyectos" onClick={handleMenuBar}>Proyectos</a></li>
+                            <li><a href="#contactos" onClick={handleMenuBar}>Contactos</a></li>
                             <li>
                                 <div className='redes'>
                                     <div><img src={discord} /></div>

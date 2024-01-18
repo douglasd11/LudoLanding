@@ -20,12 +20,14 @@ import code from './assets/code.svg'
 import portfolioPort from './assets/portfolio-portada.png'
 import eatyPort from './assets/eaty-portada.png'
 import trello from './assets/trello.svg'
+import whatsapp from './assets/whatsapp.svg'
 
 
 import CardServices from './components/Card/CardServices'
 import CardProjects from './components/Card/CardProjects'
 import Header from './components/Header/Header'
 import Footer from './components/Footer/Footer'
+import FormApplication from './components/Form/FormApplication'
 
 
 function App() {
@@ -112,10 +114,7 @@ function App() {
                     <div className='pres'>
                       <img className='code' src={code} />
                       <div className='proj'>
-                        
-                          
-                          <h3 className='title'>Labporfolio.dev</h3>
-                        
+                        <h3 className='title'>Labporfolio.dev</h3>
                         
                         <p className='dates aqua'>Enero 2024 - Actualidad</p>
 
@@ -127,8 +126,11 @@ function App() {
                           tecnologias a usar para asegurar la escalabilidad del proyecto. 
                         </p> */}
                         <div className='link'>
-                          <a className='github' href="#"><img src={github}/>Repositorio</a>
-                          <a className='trello' href="#"><img src={trello}/>Tablero</a>
+                          <a className='github disable'><img src={github}/>Repositorio</a>
+                          <a className='trello' href="https://trello.com/b/gzlep3oZ/labportfolio" target='_blank'>
+                            <img src={trello}/>
+                            Tablero
+                          </a>
                         </div>
                       </div>
                     </div>
@@ -151,6 +153,7 @@ function App() {
                       <img className='code' src={code} />
                       <div className='proj'>
                         <h3 className='title'>Eatydomis.com</h3>
+
                         <p className='dates aqua'>Marzo 2024 - Actualidad</p>
 
                         <p className='info'>Aplicacion web para el crecimiento de pequeños y medianos restaurantes, 
@@ -160,8 +163,11 @@ function App() {
                           diagrama de requisitos funcionales. 
                         </p> */}
                         <div className='link'>
-                          <a className='github' href="#"><img src={github}/>Repositorio</a>
-                          <a className='trello' href="#"><img src={trello}/>Tablero</a>
+                          <a className='github disable'><img src={github}/>Repositorio</a>
+                          <a className='trello' href="https://trello.com/b/tx57Eyd2/eatydomis" target='_blank'>
+                            <img src={trello}/>
+                            Tablero
+                          </a>
                         </div>
                       </div>
                     </div>
@@ -180,7 +186,7 @@ function App() {
               <h3 className='title'>Cuentanos como podemos ayudarte.</h3>
               <p className='message'>Cada minuto es una oportunidad y cuanto más compartas tu trabajo e inspires a tu alrededor, más puertas se abrirán para ti.</p>
               <div className='person'>
-                <p>Luis miguel espitaleta</p>
+                <p>Luis Miguel Espitaleta</p>
                 <span>Gestor de proyectos</span>
               </div>
               <div className='email'>
@@ -190,30 +196,7 @@ function App() {
             </div>
 
             <div className='request'>
-              <form className='form'>
-                <h4>Solicitudes y dudas</h4>
-                <div className='form-control'>
-                  <label htmlFor="">Nombre completo</label>
-                  <input type="text" placeholder='Nombre completo' required/>
-                </div>
-                <div className='form-control'>
-                  <label htmlFor="">Correo electronico</label>
-                  <input type="email" placeholder='Correo electronico' required/>
-                </div>
-                <div className='form-control'>
-                  <label htmlFor="">Numero de celular</label>
-                  <input type="tel" placeholder='Numero de celular' required/>
-                </div>
-                <div className='form-control'>
-                  <label htmlFor="">Asunto / mensaje</label>
-                  <input type="text" placeholder='Mensaje' required/>
-                </div>
-                <p className='text'>Recuerde llenar todos los campos</p>
-                <button>
-                  <p>Enviar</p>
-                  {/* <img src="" alt="" /> */}
-                </button>
-              </form>
+              <FormApplication/>
             </div>
 
           </div>
@@ -221,6 +204,9 @@ function App() {
 
       </main>
 
+      <a href="https://api.whatsapp.com/send/?phone=573238088453&text=Hola, me gustaria obtener más información&type=phone_number&app_absent=0" className="float" target="_blank">
+        <img src={whatsapp} alt="" />
+      </a>
       <Footer/>
 
     </>

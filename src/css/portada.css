@@ -100,7 +100,7 @@
   height: 3rem;
   padding: 1rem 1.7rem;
   border-radius: 0.5rem;
-  background-color: rgba(104, 158, 187, 0.316);
+  background-color: rgb(146 189 212 / 58%);
   color: white;
   border: 2px solid rgba(225, 225, 225, 0.857);
 
@@ -111,7 +111,7 @@
 }
 
 .links a:hover {  
-  background-color: rgba(54, 115, 222, 0.849);
+  background-color: rgba(81, 132, 222, 0.849);
   border: 2px solid rgba(225, 225, 225, 1);
 }
 
@@ -362,6 +362,15 @@
   border: solid #d1d9e2;
 }
 
+.card-proj .pres .link .disable{
+  background-color: rgba(80, 80, 88, 0.849);
+  cursor: default;
+}
+
+.card-proj .pres .link .disable:hover{  
+  border: 1px solid rgba(255, 255, 255, 0.265);
+}
+
 .card-proj .pres .link img{
   height: 1.3rem;
   margin-right: 0.5rem;
@@ -504,7 +513,6 @@
   padding-bottom: 0;
   border: 1px solid rgba(96, 96, 96, 0.525);
   overflow: hidden;
-
 }
 
 .contactos .request .form{
@@ -578,6 +586,19 @@
   background-color: #e3eaf3;
   color: rgb(35, 99, 249);
   border: 1px solid rgb(35, 99, 249);
+}
+
+.contactos .form .box-msg{
+  padding-top: 1rem;
+  min-height: 40px;
+  font-weight: 600;
+  color: rgb(0, 14, 171);
+  cursor: default;
+}
+
+.contactos .form .box-msg p{
+  transition: opacity 0.1s ease-in-out;
+  opacity: 0;
 }
 
 
