@@ -34,6 +34,17 @@ export default function Header(props) {
         setOpen(!open)
     }
 
+    const handleMenuLink = () => {
+        let menubar = menuRef.current
+
+        if(!open){
+            document.body.setAttribute('style',  (open ? 'overflow: hidden' : 'overflow: auto'))
+            menubar.setAttribute('style', (open ? 'left: 0; opacity: 1' : 'left: -100%; opacity: 0') )
+            setOpen(!open)
+        }
+        
+    }
+
     return (
         <header className='header' id='#inicio'>
             <div className='cont-header'>
@@ -45,10 +56,10 @@ export default function Header(props) {
                     
                     <div className='menu'>
                         <ul ref={menuRef}>
-                            <li><a href="#inicio" onClick={handleMenuBar}>Inicio</a></li>
-                            <li><a href="#servicios" onClick={handleMenuBar}>Servicios</a></li>
-                            <li><a href="#proyectos" onClick={handleMenuBar}>Proyectos</a></li>
-                            <li><a href="#contactos" onClick={handleMenuBar}>Contactos</a></li>
+                            <li><a href="#inicio" onClick={handleMenuLink}>Inicio</a></li>
+                            <li><a href="#servicios" onClick={handleMenuLink}>Servicios</a></li>
+                            <li><a href="#proyectos" onClick={handleMenuLink}>Proyectos</a></li>
+                            <li><a href="#contactos" onClick={handleMenuLink}>Contactos</a></li>
                             <li>
                                 <div className='redes'>
                                     <div><img src={discord} /></div>
