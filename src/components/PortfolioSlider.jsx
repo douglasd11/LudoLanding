@@ -10,10 +10,10 @@ import { useLayoutEffect, useMemo, useRef, useState, useEffect } from "react";
 
 const baseLogos = [
   { src: logoyeeshop, alt: "Yeeshop", href: "https://yeeshopctg.com/" },
-  { src: logojmteam, alt: "JM Team", href: "https://jmteam.com" },
-  { src: logoservicentro, alt: "Servicentro La 70", href: "https://servicentrol70.com" },
-  { src: logomassage, alt: "Massage Pro", href: "https://massagepro.com" },
-  { src: logoalemental, alt: "Alemental", href: "https://alemental.com" },
+  { src: logojmteam, alt: "JM Team", href: "https://jmteamconsulting.com/" },
+  { src: logoservicentro, alt: "Servicentro", href: "https://servicentroautomotriz.com.co/" },
+  { src: logomassage, alt: "Massage Pro", href: "https://www.massagecycle.com/" },
+  { src: logoalemental, alt: "Alemental", href: "https://alemental.com.co/" },
 ];
 
 export default function PortfolioMarqueeDrag() {
