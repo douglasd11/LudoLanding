@@ -75,8 +75,8 @@ body{
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  filter: brightness(1.4) blur(1px);
-  background-image: url('../assets/ludonex-github-bg-2.png');
+  filter: brightness(1.4) blur(0px);
+  background-image: url('../assets/ludonex-github-bg-2.webp');
   /* background-color: #1c2255; */
 }
 
@@ -515,7 +515,7 @@ body{
   background-repeat: no-repeat;
   background-position: center;
   filter: brightness(1.3) blur(0px);
-  background-image: url('../assets/ludonex-github-bg-2.png');
+  background-image: url('../assets/ludonex-github-bg-11.webp');
 } 
 
 .contactos .main{

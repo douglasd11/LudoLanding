@@ -16,7 +16,6 @@ import wordpress from './assets/tecnologics/wordpress.png'
 
 import code from './assets/code.svg'
 import portfolioPort from './assets/portfolio-portada.png'
-import eatyPort from './assets/eaty-portada.png'
 import trello from './assets/trello.svg'
 import whatsapp from './assets/whatsapp.svg'
 
@@ -24,7 +23,7 @@ import whatsapp from './assets/whatsapp.svg'
 
 import paginamoderna from './assets/paginamoderna.png'
 import paginafunnel from './assets/paginafunnel.png'
-import paginaventas from './assets/image.png'
+import paginaventas from './assets/paginaventas.png'
 import paginaempresarial from './assets/paginaempresarial.png'
 import automatizacion from './assets/automatizacion.jpg'
 import soluciondigital from './assets/soluciondigital.png'
@@ -251,7 +250,7 @@ function App() {
                 <div className="channel">
                   <p>WhatsApp</p>
                   <a
-                    href="https://wa.me/573122968628?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20sus%20servicios."
+                    href="https://wa.me/573187231122?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20sus%20servicios."
                     target="_blank"
                     rel="noreferrer"
                   >
