@@ -1,99 +1,137 @@
-import * as React from 'react'
+import React, { useRef, useState } from "react";
+import clienteAxios from "../../config/axios";
 
-import discord from '../../assets/discord.svg'
-import github from '../../assets/github.svg'
-import linkedin from '../../assets/linkedin.svg'
-import { useState } from 'react'
-import clienteAxios from '../../config/axios'
-import {useFormValidate} from 'use-form-validate';
-import { useRef } from 'react'
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
 
+const formSchema = z.object({
+  nombre: z
+    .string()
+    .trim()
+    .min(1, "El nombre es obligatorio")
+    .min(3, "Escriba su nombre completo"),
+  correo: z.string().trim().min(1, "El correo es obligatorio").email("Correo inválido"),
+  numero: z
+    .string()
+    .trim()
+    .min(1, "El número es obligatorio")
+    .min(7, "Número inválido")
+    .max(15, "Número inválido")
+    .regex(/^[0-9+()\s-]+$/, "Número inválido"),
+  asunto: z.string().trim().min(1, "El mensaje es obligatorio").min(5, "Mensaje muy corto"),
+});
 
 export default function FormApplication() {
+  const msgRef = useRef(null);
+  const timeoutRef = useRef(null);
 
-    const {
-        handleSubmit,
-        getFieldProps,
-        getFieldError,
-        removeInput,
-    } = useFormValidate();
+  const [serverMsg, setServerMsg] = useState("");
 
-    const msgRef = useRef(null)
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors, isSubmitting },
+  } = useForm({
+    resolver: zodResolver(formSchema),
+    mode: "onTouched",
+    defaultValues: {
+      nombre: "",
+      correo: "",
+      numero: "",
+      asunto: "",
+    },
+  });
 
-    const onSubmit = (formData) => {
+  const showMessage = (text) => {
+    setServerMsg(text);
 
-        clienteAxios.post('/solicitud/agregar', formData)
-        .then(res => {
-            console.log("solicitud enviada")
-        })
+    const el = msgRef.current;
+    if (!el) return;
 
-        let msg = msgRef.current
-        msg.setAttribute('style', 'opacity: 1' )
+    el.style.opacity = "1";
 
-        setTimeout(() =>{
-            msg.setAttribute('style', 'opacity: 0; transition: opacity 0.2s ease-in-out;')
-        }, 3000)
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
 
-        removeInput('nombre')
-        removeInput('correo')
-        removeInput('numero')
-        removeInput('asunto')
-    };
+    timeoutRef.current = setTimeout(() => {
+      el.style.opacity = "0";
+      el.style.transition = "opacity 0.2s ease-in-out";
+    }, 3000);
+  };
 
-    return (
-        <form className='form' onSubmit={handleSubmit(onSubmit)}>
-            <h4>Solicitudes y dudas</h4>
+  const onSubmit = async (formData) => {
+    try {
+      await clienteAxios.post("/solicitud/agregar", formData);
+      showMessage("Gracias por enviar su solicitud, pronto estaremos en contacto.");
+      reset(); // limpia todos los campos
+    } catch (e) {
+      showMessage("Ocurrió un error enviando la solicitud. Intenta de nuevo.");
+      // console.error(e);
+    }
+  };
 
-            <div className='form-control'>
-                <label htmlFor="">Nombre completo</label>
-                <input 
-                    type="text" 
-                    placeholder='Nombre completo' 
-                    name='nombre' 
-                    {...getFieldProps('nombre', { required: true })}
-                />
-                <span style={{ color: 'red' }}>{getFieldError('nombre')}</span>
-            </div>
-            <div className='form-control'>
-                <label htmlFor="">Correo electronico</label>
-                <input 
-                    type="email" 
-                    placeholder='Correo electronico' 
-                    name='correo' 
-                    {...getFieldProps('correo', { required: true, email: true })}
-                />
-                <span style={{ color: 'red' }}>{getFieldError('correo')}</span>
-            </div>
-            <div className='form-control'>
-                <label htmlFor="">Numero de celular</label>
-                <input 
-                    type="tel" 
-                    placeholder='Numero de celular'
-                    name='numero' 
-                    {...getFieldProps('numero', { required: true, phone: true })}
-                />
-                <span style={{ color: 'red' }}>{getFieldError('numero')}</span>
-            </div>
-            <div className='form-control'>
-                <label htmlFor="">Asunto / mensaje</label>
-                <input 
-                    type="text" 
-                    placeholder='Mensaje' 
-                    name='asunto' 
-                    {...getFieldProps('asunto', { required: true })}
-                />
-                <span style={{ color: 'red' }}>{getFieldError('asunto')}</span>
-            </div>
-            <p className='text'>Recuerde llenar todos los campos</p>
+  return (
+    <form className="form" onSubmit={handleSubmit(onSubmit)}>
+      <h4>Solicitudes y dudas</h4>
 
-            <button type='submit'>
-                <p>Enviar</p>
-                {/* <img src="" alt="" /> */}
-            </button>
-            
-            <div className='box-msg'>
-                <p ref={msgRef}>Gracias por enviar su solicitud, pronto estaremos en contacto.</p>
-            </div>
-        </form>
-    );
+      <div className="form-control">
+        <label>Nombre completo</label>
+        <input
+          type="text"
+          placeholder="Nombre completo"
+          {...register("nombre")}
+        />
+        <span style={{ color: "red" }}>{errors.nombre?.message}</span>
+      </div>
+
+      <div className="form-control">
+        <label>Correo electronico</label>
+        <input
+          type="email"
+          placeholder="Correo electronico"
+          {...register("correo")}
+        />
+        <span style={{ color: "red" }}>{errors.correo?.message}</span>
+      </div>
+
+      <div className="form-control">
+        <label>Numero de celular</label>
+        <input
+          type="tel"
+          placeholder="Numero de celular"
+          {...register("numero")}
+        />
+        <span style={{ color: "red" }}>{errors.numero?.message}</span>
+      </div>
+
+      <div className="form-control">
+        <label>Asunto / mensaje</label>
+        <input
+          type="text"
+          placeholder="Mensaje"
+          {...register("asunto")}
+        />
+        <span style={{ color: "red" }}>{errors.asunto?.message}</span>
+      </div>
+
+      <p className="text">Recuerde llenar todos los campos</p>
+
+      <button type="submit" disabled={isSubmitting}>
+        <p>{isSubmitting ? "Enviando..." : "Enviar"}</p>
+      </button>
+
+      <div className="box-msg">
+        <p
+          ref={msgRef}
+          style={{
+            opacity: 0,
+            transition: "opacity 0.2s ease-in-out",
+          }}
+        >
+          {serverMsg || " "}
+        </p>
+      </div>
+    </form>
+  );
 }
