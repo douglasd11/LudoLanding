@@ -45,8 +45,8 @@ body{
 }
 
 .cont-header .logo img{
-  width: 32px;
-  height: 32px;
+  width: 38px;
+  height: 38px;
   margin-bottom: 3px;
 }
 
@@ -61,12 +61,13 @@ body{
   display: flex;
   width: 100%;
   align-items: center;
+  justify-content: space-between;
   gap: 5rem;
 }
 
 .header .menu{
   display: flex;
-  width: 100%;
+  /* width: 100%; */
   justify-content: space-between;
 }
 
@@ -249,7 +250,7 @@ body{
 /* ------------------------------------------- */
 
 .footer{
-  background-color: #17193983;
+  /* background-color: #17193983; */
   border-top: 1px solid rgb(52,56,65);
 }
 

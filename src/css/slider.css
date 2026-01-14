@@ -1,0 +1,88 @@
+.portafolio-wrap{
+  width: 100%;
+  position: relative;
+}
+
+.portafolio-viewport{
+  width: 100%;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  display: flex;
+  align-items: center;
+
+  cursor: grab;
+  user-select: none;
+  -webkit-user-select: none;
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  touch-action: pan-y;
+  overscroll-behavior-x: none;
+
+  /* Evita reglas globales que “congelen” el movimiento */
+  scroll-behavior: auto !important;
+  scroll-snap-type: none !important;
+
+  opacity: 0;
+}
+
+.portafolio-viewport::-webkit-scrollbar{
+  display: none;
+}
+
+.portafolio-viewport.is-ready{
+  opacity: 1;
+}
+
+.portafolio-viewport.is-dragging{
+  cursor: grabbing;
+}
+
+.portafolio-group{
+  display: flex;
+  align-items: center;
+  gap: var(--gap);
+  padding-right: var(--gap); /* separación entre último y primero (empalme) */
+  flex: 0 0 auto;
+}
+
+.logo-card{
+  flex: 0 0 auto;
+  width: 230px;
+  height: 230px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+
+  /* por si hay scroll-snap global */
+  scroll-snap-align: none !important;
+}
+
+.logo-card img{
+  width: 140px;
+  height: 48px;
+  object-fit: contain;
+  display: block;
+  pointer-events: none;
+}
+
+@media (max-width: 768px){
+  .logo-card{ width: 170px; height: 170px; }
+  .logo-card img{ width: 110px; height: 40px; }
+}
+
+.logo-link{
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  text-decoration: none;
+}
+
+/* opcional: efecto hover */
+.logo-link:hover{
+  transform: scale(1.06);
+}

@@ -10,13 +10,13 @@ export default function Footer(props) {
         <footer className='footer'>
             <div className='cont-footer'>
                 <div>
-                    <p>© 2024 LudoNex, Inc</p>
+                    <p>© 2026 Ludonex, Inc</p>
                 </div>
-                <div className='redes'>
+                {/* <div className='redes'>
                     <img src={discord} alt="" />
                     <img src={github} alt="" />
                     <img src={linkedin} alt="" />
-                </div>
+                </div> */}
             </div>
         </footer>
     );

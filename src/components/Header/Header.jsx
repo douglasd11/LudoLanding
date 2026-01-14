@@ -50,8 +50,8 @@ export default function Header(props) {
             <div className='cont-header'>
                 <div className='principal'>
                     <div className='logo'>
-                    <img src={logo} alt="" />
-                    <h2>LudoNex</h2>
+                        <img src={logo} alt="" />
+                        <h2>Ludonex</h2>
                     </div>
                     
                     <div className='menu'>
@@ -60,13 +60,13 @@ export default function Header(props) {
                             <li><a href="#servicios" onClick={handleMenuLink}>Servicios</a></li>
                             <li><a href="#proyectos" onClick={handleMenuLink}>Proyectos</a></li>
                             <li><a href="#contactos" onClick={handleMenuLink}>Contactos</a></li>
-                            <li>
+                            {/* <li>
                                 <div className='redes'>
                                     <div><img src={discord} /></div>
                                     <div><img src={github} /></div>
                                     <div><img src={linkedin} /></div>
                                 </div>
-                            </li>
+                            </li> */}
                         </ul>
                         {/* <div className='redes'>
                             <div><img src={discord} /></div>

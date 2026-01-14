@@ -9,12 +9,9 @@ import githubl from './assets/tecnologics/github.png'
 import nodejs from './assets/tecnologics/node.png'
 import postgre from './assets/tecnologics/postgresql.png'
 import react from './assets/tecnologics/react.png'
+import shopify from './assets/tecnologics/shopify.png'
+import wordpress from './assets/tecnologics/wordpress.png'
 
-import cover from './assets/pricing-cover.svg'
-
-import globe from './assets/globe.svg'
-import mobile from './assets/mobile.svg'
-import cuadros from './assets/cuadros.svg'
 
 
 import code from './assets/code.svg'
@@ -23,11 +20,7 @@ import eatyPort from './assets/eaty-portada.png'
 import trello from './assets/trello.svg'
 import whatsapp from './assets/whatsapp.svg'
 
-import logoyeeshop from './assets/logoyeeshop.png'
-import logoservicentro from './assets/logo-automotriz.png'
-import logojmteam from './assets/logojmteam.png'
-import logomassage from './assets/logomassage.png'
-import logoalemental from './assets/logoalemental.png'
+
 
 import paginamoderna from './assets/paginamoderna.png'
 import paginafunnel from './assets/paginafunnel.png'
@@ -191,6 +184,7 @@ function App() {
               <p>Portafolio</p>
             </div>
 
+            <p className='texto'>Webs, e-commerce y sistemas a medida, mira algunos proyectos.</p>
 
             {/* <div className="portafolio">
 
@@ -220,11 +214,7 @@ function App() {
 
             {/* STACKS */}
             <div className="stack">
-              {/* <div className="texto">
-                <p>Mira todo nuestro stack </p>
-                <p>tecnologico para el</p>
-                <p>desarollo de las apps:</p>
-              </div> */}
+              {/* <h4>Stack que usamos</h4> */}
 
               <div className="tecnologias">
                 <img src={nodejs} alt="Node.js" />
@@ -233,6 +223,9 @@ function App() {
                 <img src={postgre} alt="PostgreSQL" />
                 <img src={aws} alt="AWS" />
                 <img src={githubl} alt="GitHub" />
+                <img src={shopify} alt="Shopify" />
+                <img src={wordpress} alt="WordPress" />
+
               </div>
             </div>
           </div>
@@ -249,10 +242,10 @@ function App() {
                 lograr y te ayudamos a definir la mejor opción para tu negocio.
               </p>
 
-              <div className="contact-channels">
+              <div className="contact-channels text-xl">
                 <div className="channel">
                   <p>Correo corporativo</p>
-                  <a href="mailto:info@ludonex.com">info@ludonex.com</a>
+                  <a  href="mailto:info@ludonex.com">info@ludonex.com</a>
                 </div>
 
                 <div className="channel">
@@ -277,7 +270,7 @@ function App() {
 
       </main>
 
-      <a href="https://api.whatsapp.com/send/?phone=573238088453&text=Hola, me gustaria obtener más información&type=phone_number&app_absent=0" className="float" target="_blank">
+      <a href="https://api.whatsapp.com/send/?phone=573187231122&text=Hola, me gustaria obtener más información&type=phone_number&app_absent=0" className="float" target="_blank">
         <img src={whatsapp} alt="" />
       </a>
       <Footer />
