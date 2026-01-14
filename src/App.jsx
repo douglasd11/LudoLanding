@@ -23,10 +23,18 @@ import eatyPort from './assets/eaty-portada.png'
 import trello from './assets/trello.svg'
 import whatsapp from './assets/whatsapp.svg'
 
-import logoyeeshop from './assets/logoyeeshop.jpg'
-import logoservicentro from './assets/logoservicentro.jpg'
+import logoyeeshop from './assets/logoyeeshop.png'
+import logoservicentro from './assets/logo-automotriz.png'
 import logojmteam from './assets/logojmteam.png'
 import logomassage from './assets/logomassage.png'
+import logoalemental from './assets/logoalemental.png'
+
+import paginamoderna from './assets/paginamoderna.png'
+import paginafunnel from './assets/paginafunnel.png'
+import paginaventas from './assets/image.png'
+import paginaempresarial from './assets/paginaempresarial.png'
+import automatizacion from './assets/automatizacion.jpg'
+import soluciondigital from './assets/soluciondigital.png'
 
 
 import CardServices from './components/Card/CardServices'
@@ -34,6 +42,11 @@ import CardProjects from './components/Card/CardProjects'
 import Header from './components/Header/Header'
 import Footer from './components/Footer/Footer'
 import FormApplication from './components/Form/FormApplication'
+
+import PortfolioSlider from './components/PortfolioSlider'
+
+import { useEffect, useState } from "react";
+
 
 
 function App() {
@@ -64,24 +77,8 @@ function App() {
                 <a href='#contactos'>Ver soluciones</a>
               </div>
             </div>
-            {/* <div className='stack'>
-              <div className='texto'>
-                <p>Mira todo nuestro stack </p>
-                <p>tecnologico para el</p>
-                <p>desarollo de las apps:</p>
-              </div>
-      
-              <div className='tecnologias'>
-                <img src={nodejs} alt="" />
-                <img src={react} alt="" />
-                <img src={angular} alt="" />
-                <img src={postgre} alt="" />
-                <img src={aws} alt="" /> 
-                <img src={githubl} alt="" />
-              </div>
-            </div> */}
+
           </div>
-          {/* <img src={cover} className='cover-image' alt="" /> */}
         </section>
 
         <section className="servicios" id="servicios">
@@ -98,81 +95,91 @@ function App() {
 
           <div className="cards">
             <CardServices>
-              <img src={globe} alt="Páginas web profesionales" />
-              <p className="card-titulo">Páginas web profesionales.</p>
-              <p className="card-info">
-                Diseñamos y desarrollamos páginas web claras, modernas y optimizadas para
-                que tus clientes te encuentren, confíen en ti y te contacten fácilmente.
-              </p>
-              <p className="card-micro">
-                Web corporativa · Diseño visual · Presencia online
-              </p>
+              <div>
+                {/* <img src={globe} alt="Páginas web profesionales" /> */}
+                <p className="card-titulo">Páginas web profesionales.</p>
+                <p className="card-info text-base">
+                  Diseñamos y desarrollamos páginas web claras, modernas y optimizadas para
+                  que tus clientes te encuentren, confíen en ti y te contacten fácilmente.
+                </p>
+                <p className="card-micro">
+                  Web corporativa · Diseño visual · Presencia online
+                </p>
+              </div>
+              <img className='object-cover rounded-xl h-40 w-full group-hover:scale-105 transition-all' src={paginamoderna} alt="Páginas web profesionales" />
             </CardServices>
 
             <CardServices>
-              <img src={cuadros} alt="Landing pages y embudos de venta" />
-              <p className="card-titulo">Landing pages y embudos de venta.</p>
-              <p className="card-info">
-                Creamos landing pages y funnels pensados para captar clientes, generar
-                leads y convertir visitas en oportunidades reales para tu negocio.
-              </p>
-              <p className="card-micro">
-                Landing · Funnel · Formularios · Automatización básica
-              </p>
+              <div>
+                {/* <img src={cuadros} alt="Landing pages y embudos de venta" /> */}
+                <p className="card-titulo">Landing pages y embudos de venta.</p>
+                <p className="card-info">
+                  Creamos landing pages y funnels pensados para captar clientes, generar
+                  leads y convertir visitas en oportunidades reales para tu negocio.
+                </p>
+                <p className="card-micro">
+                  Landing · Funnel · Formularios · Automatización básica
+                </p>
+              </div>
+              <img className='object-cover rounded-xl h-40 w-full group-hover:scale-105 transition-all' src={paginafunnel} alt="Landing pages y embudos de venta" />
             </CardServices>
 
             <CardServices>
-              <img src={mobile} alt="Tiendas online y ventas digitales" />
-              <p className="card-titulo">Tiendas online y ventas digitales.</p>
-              <p className="card-info">
-                Construimos tiendas online para que vendas productos o servicios 24/7,
-                con pagos seguros y una experiencia simple para tus clientes.
-              </p>
-              <p className="card-micro">
-                E-commerce · Pagos · Catálogo · POS integrado
-              </p>
+              <div>
+                {/* <img src={mobile} alt="Tiendas online y ventas digitales" /> */}
+                <p className="card-titulo">Tiendas online y ventas digitales.</p>
+                <p className="card-info">
+                  Construimos tiendas online para que vendas productos o servicios 24/7,
+                  con pagos seguros y una experiencia simple para tus clientes.
+                </p>
+                <p className="card-micro">
+                  E-commerce · Pagos · Catálogo · POS integrado
+                </p>
+              </div>
+              <img className='object-cover rounded-xl h-40 w-full group-hover:scale-105 transition-all' src={paginaventas} alt="Tiendas online y ventas digitales" />
             </CardServices>
 
             <CardServices>
-              {/* <img src={settings} alt="Sistemas y plataformas empresariales" /> */}
-              <img src={cuadros} alt="Landing pages y embudos de venta" />
-
-              <p className="card-titulo">Sistemas y plataformas empresariales.</p>
-              <p className="card-info">
-                Desarrollamos sistemas a medida para empresas que necesitan controlar
-                procesos, clientes, información y operaciones de forma eficiente.
-              </p>
-              <p className="card-micro">
-                B2B · Paneles · Sistemas internos · Integraciones
-              </p>
+              <div>
+                {/* <img src={cuadros} alt="Landing pages y embudos de venta" /> */}
+                <p className="card-titulo">Sistemas y plataformas empresariales.</p>
+                <p className="card-info">
+                  Desarrollamos sistemas a medida para empresas que necesitan controlar
+                  procesos, clientes, información y operaciones de forma eficiente.
+                </p>
+                <p className="card-micro">
+                  B2B · Paneles · Sistemas internos · Integraciones
+                </p>
+              </div>
+              <img className='object-cover rounded-xl h-40 w-full group-hover:scale-105 transition-all' src={paginaempresarial} alt="Sistemas y plataformas empresariales" />
             </CardServices>
 
             <CardServices>
-              {/* <img src={chat} alt="Automatización y chatbots" /> */}
-              <img src={cuadros} alt="Landing pages y embudos de venta" />
-
-              <p className="card-titulo">Automatización y chatbots.</p>
-              <p className="card-info">
-                Automatizamos procesos y atención al cliente mediante chatbots y flujos
-                inteligentes que ahorran tiempo y mejoran la comunicación.
-              </p>
-              <p className="card-micro">
-                Chatbots · WhatsApp · Automatización de procesos
-              </p>
+              <div>
+                <p className="card-titulo">Automatización y chatbots.</p>
+                <p className="card-info">
+                  Automatizamos procesos y atención al cliente mediante chatbots y flujos
+                  inteligentes que ahorran tiempo y mejoran la comunicación.
+                </p>
+                <p className="card-micro">
+                  Chatbots · WhatsApp · Automatización de procesos
+                </p>
+              </div>
+              <img className='object-cover rounded-xl h-40 w-full group-hover:scale-105 transition-all' src={automatizacion} alt="Automatización y chatbots" />
             </CardServices>
 
             <CardServices>
-              {/* <img src={idea} alt="Soluciones digitales a medida" /> */}
-              <img src={cuadros} alt="Landing pages y embudos de venta" />
-
-              <p className="card-titulo">Soluciones digitales a medida.</p>
-              <p className="card-info">
-                Si tienes una idea específica o un problema particular, diseñamos y
-                desarrollamos la solución digital que tu negocio realmente necesita.
-              </p>
-              <p className="card-micro">
-                Apps · Herramientas internas · Integraciones · Escalabilidad
-              </p>
+              <div>
+                <p className="card-titulo">Soluciones digitales a medida.</p>
+                <p className="card-info">
+                  Si tienes una idea específica o un problema particular, diseñamos y
+                  desarrollamos la solución digital que tu negocio realmente necesita.
+                </p>
+                <p className="card-micro">
+                  Apps · Herramientas internas · Integraciones · Escalabilidad
+                </p>
+              </div>
+              <img className='object-cover rounded-xl h-40 w-full group-hover:scale-105 transition-all' src={soluciondigital} alt="Soluciones digitales a medida" />
             </CardServices>
           </div>
         </section>
@@ -184,45 +191,40 @@ function App() {
               <p>Portafolio</p>
             </div>
 
-            {/* Portafolio: solo logos (empresas / proyectos) */}
-            <div className="cards portafolio">
-              {/* Reemplaza estos img por tus logos reales */}
+
+            {/* <div className="portafolio">
+
               <div className="logo-card">
-                {/* <img src={portfolioLogo} alt="Labporfolio.dev" /> */}
                 <img src={logoyeeshop} alt="Yeeshop" />
               </div>
 
               <div className="logo-card">
-                <img src={logojmteam} style={{backgroundColor: "#a80000"}} alt="JM Team" />
+                <img src={logojmteam} alt="JM Team" />
               </div>
 
               <div className="logo-card">
-                {/* <img src={eatyLogo} alt="Eatydomis.com" /> */}
                 <img src={logoservicentro} alt="Servicentro La 70" />
               </div>
 
               <div className="logo-card">
-                <img src={logomassage} style={{backgroundColor: "#a58c64"}} alt="Massage Pro" />
+                <img src={logomassage} alt="Massage Pro" />
               </div>
 
-              {/* Ejemplos adicionales (opcional) */}
-              {/* 
               <div className="logo-card">
-                <img src={cliente1} alt="Cliente / Empresa" />
+                <img src={logoalemental} alt="Alemental" />
               </div>
-              <div className="logo-card">
-                <img src={cliente2} alt="Cliente / Empresa" />
-              </div> 
-              */}
-            </div>
+
+            </div> */}
+
+            <PortfolioSlider />
 
             {/* STACKS */}
             <div className="stack">
-              <div className="texto">
+              {/* <div className="texto">
                 <p>Mira todo nuestro stack </p>
                 <p>tecnologico para el</p>
                 <p>desarollo de las apps:</p>
-              </div>
+              </div> */}
 
               <div className="tecnologias">
                 <img src={nodejs} alt="Node.js" />
@@ -241,8 +243,6 @@ function App() {
           <div className="main">
             <div className="info">
               <h3 className="title">¿No sabes por dónde empezar?</h3>
-
-              {/* <p className="scroll">-Scroll-</p> */}
 
               <p className="message">
                 No necesitas tener todo claro. Cuéntanos qué necesitas o qué te gustaría

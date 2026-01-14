@@ -38,11 +38,11 @@ export default function CardServices(props) {
     }
 
     return (
-        <div className="card-serv" ref={cardRef}
+        <div className="card-serv group" ref={cardRef}
             onMouseMove={(e) => handleMouseMove(e)}
             onMouseOut={(e) => handleMouseOut(e)}
         >
-            <div className='cont'>
+            <div className='cont flex flex-col justify-between h-full'>
                 { children }
             </div>
             

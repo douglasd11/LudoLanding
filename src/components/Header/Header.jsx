@@ -68,11 +68,11 @@ export default function Header(props) {
                                 </div>
                             </li>
                         </ul>
-                        <div className='redes'>
+                        {/* <div className='redes'>
                             <div><img src={discord} /></div>
                             <div><img src={github} /></div>
                             <div><img src={linkedin} /></div>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
                 
